@@ -1,0 +1,14 @@
+services:
+  bugsnag.bugsnag_client:
+    class: Drupal\bugsnag\Service\BugsnagClient
+    arguments: ["@current_user", "@config.factory", "@request_stack"]
+  bugsnag.logger:
+    class: Drupal\bugsnag\Logger\BugsnagLog
+    arguments: ["@config.factory", "@logger.log_message_parser", "@bugsnag.bugsnag_client"]
+    tags:
+      - { name: logger }
+  bugsnag.boot_subscriber:
+    class: Drupal\bugsnag\EventSubscriber\BootSubscriber
+    arguments: ["@bugsnag.bugsnag_client"]
+    tags:
+      - { name: 'event_subscriber' }
