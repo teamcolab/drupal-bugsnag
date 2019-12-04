@@ -46,7 +46,6 @@ class BugsnagLog implements LoggerInterface {
    *   The Bugsnag client service.
    */
   public function __construct(ConfigFactoryInterface $config_factory, LogMessageParserInterface $parser, BugsnagClientInterface $bugsnag) {
-
     $this->config = $config_factory->get('bugsnag.settings');
     $this->parser = $parser;
     $this->bugsnag = $bugsnag->getClient();
@@ -60,7 +59,6 @@ class BugsnagLog implements LoggerInterface {
       return;
     }
     try {
-
       // Get the log levels we've configured to send to bugsnag.
       $configured_levels = $this->config->get('bugsnag_logger');
       if (!empty($configured_levels) && is_array($configured_levels)) {
@@ -83,10 +81,10 @@ class BugsnagLog implements LoggerInterface {
             $severity = 'info';
           }
           elseif ($level === 3) {
-                $severity = 'warning';
+            $severity = 'warning';
           }
           else {
-                $severity = 'error';
+            $severity = 'error';
           }
           $report->setSeverity($severity);
         });
