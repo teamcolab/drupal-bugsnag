@@ -1,5 +1,14 @@
 {
+    "name": "teamcolab/bugsnag",
+    "description": "Bugsnag module for Drupal 8",
+    "type": "drupal-module",
     "require": {
         "bugsnag/bugsnag": "^3.0"
-    }
+    },
+    "authors": [
+        {
+            "name": "Jesse Tolj",
+            "email": "jesse.tolj@teamcolab.com"
+        }
+    ]
 }
