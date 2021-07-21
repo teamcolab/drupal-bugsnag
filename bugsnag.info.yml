@@ -1,6 +1,6 @@
 name: Bugsnag
 description: "Bugsnag v3+ integration"
-core: 8.x
+core_version_requirement: ^8.8 || ^9
 # project: bugsnag
 type: module
 configure: bugsnag.admin_form
